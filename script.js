@@ -10,7 +10,7 @@ let scoreCounts = {
 }
 
 let results = {
-    wilfred: `Your personality type is Wilfred Light, congratulations`,
+    wilfred: `Your personality type is Wilfred Light, congratulations. You enjoy hiding treasure in graves and having your shop burgled. What's the purpose of your special key? It's a mystery`,
     basque: `Your personality type is Basque Crize, congratulations`,
     ozzy: `Your personality type is Ozyz Ranvalgve, congratulations`,
     juedds: `Your personality type is Juedds Kross, congratulations`,
@@ -28,6 +28,21 @@ let beginQuiz = document.querySelector("#begin-quiz");
 
 let title = document.querySelector("#main-text");
 
+let gameOver = document.querySelector("#game-over");
+
+// let resultImage = document.querySelector("#result-image");
+
+let imgWilfred = document.createElement("img");
+let imgBasque = document.createElement("img");
+let imgOzzy = document.createElement("img");
+let imgJuedds = document.createElement("img");
+let imgMiria = document.createElement("img");
+
+imgWilfred.src = "images/wilfred.jpg";
+imgBasque.src = "images/basque.jpg";
+imgOzzy.src = "images/ozzy.jpg";
+imgJuedds.src = "images/juedds.jpg";
+imgMiria.src = "images/miria.jpg";
 
 let answersArray = document.querySelectorAll(".answers-all");
 let answer1 = document.querySelector("#answ-1");
@@ -35,6 +50,8 @@ let answer2 = document.querySelector("#answ-2");
 let answer3 = document.querySelector("#answ-3");
 let answer4 = document.querySelector("#answ-4");
 let answer5 = document.querySelector("#answ-5");
+
+
 
 let selectionSound = document.querySelector(".selection-sound");
 
@@ -47,7 +64,7 @@ answer3.addEventListener("click", nextQuestion3);
 answer4.addEventListener("click", nextQuestion4);
 answer5.addEventListener("click", nextQuestion5);
 
-
+gameOver.addEventListener("click", reloadPage);
 
 function clickToStart() {
     beginQuiz.remove();
@@ -182,10 +199,10 @@ function wipeAnswers() {
     answer3.remove();
     answer4.remove();
     answer5.remove();
-    answer1.innerHTML = "game over. click to retry ;)";
-    document.querySelector("#main-text").appendChild(gameOver).innerHTML = "Game over";
+    answer1.remove();
+    document.querySelector("#main-text").appendChild(gameOver).innerHTML = "Game over. Retry?";
+    document.querySelector("#main-text").appendChild(gameOver).innerHTML = "Game over. Retry?";
 }
-
 
 function gameEnd() {
     if (scoreCounts.wilfredLight >= scoreCounts.basqueCrize &&
@@ -193,36 +210,40 @@ function gameEnd() {
         scoreCounts.wilfredLight > scoreCounts.jueddsKross &&
         scoreCounts.wilfredLight > scoreCounts.miria) {
         title.innerHTML = results.wilfred;
-        // document.querySelector('.seven').appendChild(imgWilfred);
+        document.querySelector('#result-image').appendChild(imgWilfred);
         wipeAnswers();
     } else if (scoreCounts.basqueCrize >= scoreCounts.wilfredLight &&
         scoreCounts.basqueCrize > scoreCounts.ozzyRanvalge &&
         scoreCounts.basqueCrize > scoreCounts.jueddsKross &&
         scoreCounts.basqueCrize > scoreCounts.miria) {
         title.innerHTML = results.basque;
-        // document.querySelector('.seven').appendChild(imgBasque);
+        document.querySelector('#result-image').appendChild(imgBasque);
         wipeAnswers();
     } else if (scoreCounts.ozzyRanvalge >= scoreCounts.wilfredLight &&
         scoreCounts.ozzyRanvalge > scoreCounts.basqueCrize &&
         scoreCounts.ozzyRanvalge > scoreCounts.jueddsKross &&
         scoreCounts.ozzyRanvalge > scoreCounts.miria) {
         title.innerHTML = results.ozzy;
-        // document.querySelector('.seven').appendChild(imgOzzy);
+        document.querySelector('#result-image').appendChild(imgOzzy);
         wipeAnswers();
     } else if (scoreCounts.jueddsKross >= scoreCounts.wilfredLight &&
         scoreCounts.jueddsKross > scoreCounts.basqueCrize &&
         scoreCounts.jueddsKross > scoreCounts.ozzyRanvalge &&
         scoreCounts.ojueddsKross > scoreCounts.miria) {
         title.innerHTML = results.juedds;
-        // document.querySelector('.seven').appendChild(imgJuedds);
+        document.querySelector('#result-image').appendChild(imgJuedds);
         wipeAnswers();
     } else {
         title.innerHTML = results.miria;
-        // document.querySelector('.seven').appendChild(imgMiria);
+        document.querySelector('#result-image').appendChild(imgMiria);
         wipeAnswers();
     }
 }
 
 function playAudio() {
     selectionSound.play();
+}
+
+function reloadPage() {
+    location.reload();
 }

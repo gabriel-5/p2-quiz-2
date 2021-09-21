@@ -44,3 +44,16 @@ h1{
 .hover-text:hover{
     color: rgb(248, 144, 165);
 }
+
+#game-over{
+    padding-top: 25px;
+}
+
+#main-text{
+    padding-top: 15px;
+}
+
+#result-image{
+    text-align: center;
+    border-radius: 100%;
+}
