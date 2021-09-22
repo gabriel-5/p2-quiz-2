@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-2 left"></div>
         <div class="col-8 pink-text">
-            <h2 class="align-center hover-text" id="begin-quiz">BEGIN QUIZ NOW</h2>
+            <h2 class="align-center hover-text" onclick="clickToStart()" id="begin-quiz">BEGIN QUIZ NOW</h2>
         </div>
         <div class="col-2 right"></div>
     </div>
@@ -49,19 +49,19 @@
     <div class="row pink-text align-center">
         <div class="col-1"></div>
         <div class="col-sm-2 blue-background">
-            <p class="hover-text" id="answ-1" class="answers-all"></p>
+            <p class="hover-text" id="answ-1" onclick="nextQuestion(answer1)" class="answers-all"></p>
         </div>
         <div class="col-sm-2 blue-background">
-            <p class="hover-text" id="answ-2" class="answers-all"></p>
+            <p class="hover-text" id="answ-2" onclick="nextQuestion(answer2)" class="answers-all"></p>
         </div>
         <div class="col-sm-2 blue-background">
-            <p class="hover-text" id="answ-3" class="answers-all"></p>
+            <p class="hover-text" id="answ-3" onclick="nextQuestion(answer3)" class="answers-all"></p>
         </div>
         <div class="col-sm-2 blue-background">
-            <p class="hover-text" id="answ-4" class="answers-all"></p>
+            <p class="hover-text" id="answ-4" onclick="nextQuestion(answer4)" class="answers-all"></p>
         </div>
         <div class="col-sm-2 blue-background">
-            <p class="hover-text" id="answ-5" class="answers-all"></p>
+            <p class="hover-text" id="answ-5" onclick="nextQuestion(answer5)" class="answers-all"></p>
         </div>
         <div class="col-1"></div>
     </div>

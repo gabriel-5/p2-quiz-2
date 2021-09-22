@@ -55,13 +55,13 @@ let answer5 = document.querySelector("#answ-5");
 let selectionSound = document.querySelector(".selection-sound");
 let endingSong = document.querySelector(".ending-song");
 
-beginQuiz.addEventListener("click", clickToStart);
+// beginQuiz.addEventListener("click", clickToStart);
 
-answer1.addEventListener("click", nextQuestion1);
-answer2.addEventListener("click", nextQuestion2);
-answer3.addEventListener("click", nextQuestion3);
-answer4.addEventListener("click", nextQuestion4);
-answer5.addEventListener("click", nextQuestion5);
+// answer1.addEventListener("click", nextQuestion1);
+// answer2.addEventListener("click", nextQuestion2);
+// answer3.addEventListener("click", nextQuestion3);
+// answer4.addEventListener("click", nextQuestion4);
+// answer5.addEventListener("click", nextQuestion5);
 
 gameOver.addEventListener("click", reloadPage);
 
@@ -82,34 +82,29 @@ function clickToStart() {
     playAudio();
 }
 
-function nextQuestion1() {
-    if (qNum > 4) {
-        gameEnd();
-        playAudio2();
-    } else {
-        scoreCounts.wilfredLight++;
-        title.innerHTML = questions[qNum];
-        answer1.innerHTML = answers[aNum];
-        aNum++
-        answer2.innerHTML = answers[aNum];
-        aNum++
-        answer3.innerHTML = answers[aNum];
-        aNum++
-        answer4.innerHTML = answers[aNum];
-        aNum++
-        answer5.innerHTML = answers[aNum];
-        aNum++
-        qNum++;
-        playAudio();
+function nextQuestion(playerChoice) {
+    switch (playerChoice) {
+        case answer1:
+            scoreCounts.wilfredLight++;
+            break;
+        case answer2:
+            scoreCounts.basqueCrize++;
+            break;
+        case answer3:
+            scoreCounts.ozzyRanvalge++;
+            break;
+        case answer4:
+            scoreCounts.jueddsKross++;
+            break;
+        case answer5:
+            scoreCounts.miria++;
+            break;
     }
-}
 
-function nextQuestion2() {
     if (qNum > 4) {
         gameEnd();
         playAudio2();
     } else {
-        scoreCounts.basqueCrize++;
         title.innerHTML = questions[qNum];
         answer1.innerHTML = answers[aNum];
         aNum++
@@ -122,74 +117,7 @@ function nextQuestion2() {
         answer5.innerHTML = answers[aNum];
         aNum++
         qNum++;
-        playAudio();
-    }
-}
-
-function nextQuestion3() {
-    if (qNum > 4) {
-        gameEnd();
-        playAudio2();
-    } else {
-        scoreCounts.ozzyRanvalge++;
-        title.innerHTML = questions[qNum];
-        answer1.innerHTML = answers[aNum];
-        aNum++
-        answer2.innerHTML = answers[aNum];
-        aNum++
-        answer3.innerHTML = answers[aNum];
-        aNum++
-        answer4.innerHTML = answers[aNum];
-        aNum++
-        answer5.innerHTML = answers[aNum];
-        aNum++
-        qNum++;
-        playAudio();
-    }
-}
-
-function nextQuestion4() {
-    if (qNum > 4) {
-        gameEnd();
-        playAudio2();
-    } else {
-        scoreCounts.jueddsKross++;
-        title.innerHTML = questions[qNum];
-        answer1.innerHTML = answers[aNum];
-        aNum++
-        answer2.innerHTML = answers[aNum];
-        aNum++
-        answer3.innerHTML = answers[aNum];
-        aNum++
-        answer4.innerHTML = answers[aNum];
-        aNum++
-        answer5.innerHTML = answers[aNum];
-        aNum++
-        qNum++;
-        playAudio();
-    }
-}
-
-
-function nextQuestion5() {
-    if (qNum > 4) {
-        gameEnd();
-        playAudio2();
-    } else {
-        scoreCounts.miria++;
-        title.innerHTML = questions[qNum];
-        answer1.innerHTML = answers[aNum];
-        aNum++
-        answer2.innerHTML = answers[aNum];
-        aNum++
-        answer3.innerHTML = answers[aNum];
-        aNum++
-        answer4.innerHTML = answers[aNum];
-        aNum++
-        answer5.innerHTML = answers[aNum];
-        aNum++
-        qNum++;
-        playAudio();
+        // playAudio();
     }
 }
 
