@@ -11,10 +11,10 @@ let scoreCounts = {
 
 let results = {
     wilfred: `Your personality type is Wilfred Light, congratulations. You enjoy hiding treasure in graves and having your shop burgled. What's the purpose of your special key? It's a mystery`,
-    basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and will be well-known for your patient temperament. I hope your friends all return soon.`,
-    ozzy: `Your personality type is Ozyz Ranvalgve, congratulations`,
-    juedds: `Your personality type is Juedds Kross, congratulations`,
-    miria: `Your personality type is Miria the Fairy, congratulations`
+    basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and are well-known for your patient temperament. I hope your friends all return soon.`,
+    ozzy: `Your personality type is Ozzy Ranvalgve, congratulations. You are easily the best fencer around, having spent years at the academy. Will you ever make amends with the sage?`,
+    juedds: `Your personality type is Juedds Kross, congratulations. You are deeply religious, and - before it was stolen - never would leave home without your massive gold cross. Who would steal something so cumbersome?`,
+    miria: `Your personality type is Miria the Fairy ...What the matter? My master is resting right now. That's a very rare item that you have there. It's called the Foxglove. It has the power to resurrect wandering souls. A messenger must have stolen it and fled, in hopes of returning ...Speaking of which, do you know how Messengers are born? They are originally fragments of human emotions... that acquire physical form and become sentient.`
 }
 
 let answers = ["Merchant", "Soldier", "Gravekeeper", "Priest", "Fairy", "I can't see a thing", "Sharp",
@@ -30,14 +30,11 @@ let title = document.querySelector("#main-text");
 
 let gameOver = document.querySelector("#game-over");
 
-// let resultImage = document.querySelector("#result-image");
-
 let imgWilfred = document.createElement("img");
 let imgBasque = document.createElement("img");
 let imgOzzy = document.createElement("img");
 let imgJuedds = document.createElement("img");
 let imgMiria = document.createElement("img");
-
 
 
 imgWilfred.src = "images/wilfred.jpg";
@@ -46,13 +43,13 @@ imgOzzy.src = "images/ozzy.jpg";
 imgJuedds.src = "images/juedds.jpg";
 imgMiria.src = "images/miria.jpg";
 
+
 let answersArray = document.querySelectorAll(".answers-all");
 let answer1 = document.querySelector("#answ-1");
 let answer2 = document.querySelector("#answ-2");
 let answer3 = document.querySelector("#answ-3");
 let answer4 = document.querySelector("#answ-4");
 let answer5 = document.querySelector("#answ-5");
-
 
 
 let selectionSound = document.querySelector(".selection-sound");
