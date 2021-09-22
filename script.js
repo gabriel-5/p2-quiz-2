@@ -11,7 +11,7 @@ let scoreCounts = {
 
 let results = {
     wilfred: `Your personality type is Wilfred Light, congratulations. You enjoy hiding treasure in graves and having your shop burgled. What's the purpose of your special key? It's a mystery`,
-    basque: `Your personality type is Basque Crize, congratulations`,
+    basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and will be well-known for your patient temperament. I hope your friends all return soon.`,
     ozzy: `Your personality type is Ozyz Ranvalgve, congratulations`,
     juedds: `Your personality type is Juedds Kross, congratulations`,
     miria: `Your personality type is Miria the Fairy, congratulations`
@@ -38,6 +38,8 @@ let imgOzzy = document.createElement("img");
 let imgJuedds = document.createElement("img");
 let imgMiria = document.createElement("img");
 
+
+
 imgWilfred.src = "images/wilfred.jpg";
 imgBasque.src = "images/basque.jpg";
 imgOzzy.src = "images/ozzy.jpg";
@@ -54,7 +56,7 @@ let answer5 = document.querySelector("#answ-5");
 
 
 let selectionSound = document.querySelector(".selection-sound");
-
+let endingSong = document.querySelector(".ending-song");
 
 beginQuiz.addEventListener("click", clickToStart);
 
@@ -86,7 +88,7 @@ function clickToStart() {
 function nextQuestion1() {
     if (qNum > 4) {
         gameEnd();
-        playAudio();
+        playAudio2();
     } else {
         scoreCounts.wilfredLight++;
         title.innerHTML = questions[qNum];
@@ -108,7 +110,7 @@ function nextQuestion1() {
 function nextQuestion2() {
     if (qNum > 4) {
         gameEnd();
-        playAudio();
+        playAudio2();
     } else {
         scoreCounts.basqueCrize++;
         title.innerHTML = questions[qNum];
@@ -130,7 +132,7 @@ function nextQuestion2() {
 function nextQuestion3() {
     if (qNum > 4) {
         gameEnd();
-        playAudio();
+        playAudio2();
     } else {
         scoreCounts.ozzyRanvalge++;
         title.innerHTML = questions[qNum];
@@ -152,7 +154,7 @@ function nextQuestion3() {
 function nextQuestion4() {
     if (qNum > 4) {
         gameEnd();
-        playAudio();
+        playAudio2();
     } else {
         scoreCounts.jueddsKross++;
         title.innerHTML = questions[qNum];
@@ -175,7 +177,7 @@ function nextQuestion4() {
 function nextQuestion5() {
     if (qNum > 4) {
         gameEnd();
-        playAudio();
+        playAudio2();
     } else {
         scoreCounts.miria++;
         title.innerHTML = questions[qNum];
@@ -201,7 +203,7 @@ function wipeAnswers() {
     answer5.remove();
     answer1.remove();
     document.querySelector("#main-text").appendChild(gameOver).innerHTML = "Game over. Retry?";
-    document.querySelector("#main-text").appendChild(gameOver).innerHTML = "Game over. Retry?";
+    gameOver.classList.add("hover-text");
 }
 
 function gameEnd() {
@@ -229,7 +231,7 @@ function gameEnd() {
     } else if (scoreCounts.jueddsKross >= scoreCounts.wilfredLight &&
         scoreCounts.jueddsKross > scoreCounts.basqueCrize &&
         scoreCounts.jueddsKross > scoreCounts.ozzyRanvalge &&
-        scoreCounts.ojueddsKross > scoreCounts.miria) {
+        scoreCounts.jueddsKross > scoreCounts.miria) {
         title.innerHTML = results.juedds;
         document.querySelector('#result-image').appendChild(imgJuedds);
         wipeAnswers();
@@ -242,6 +244,11 @@ function gameEnd() {
 
 function playAudio() {
     selectionSound.play();
+}
+
+
+function playAudio2() {
+    endingSong.play();
 }
 
 function reloadPage() {

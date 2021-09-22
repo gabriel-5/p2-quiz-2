@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@900&display=swap');
 
+@keyframes rotate {
+    from {
+      transform: rotate(-40deg);
+    }
+    to { 
+      transform: rotate(320deg);
+    } 
+  }
+
+  @keyframes warp {
+    from {
+      transform: skew(360deg);
+    }
+    to { 
+      transform: rotate(360deg, 1deg);
+    } 
+  }
+
+
+
 body{
-    background-image: url(images/background.png);
+    background-image: url(images/background-lines.png);
     -webkit-touch-callout: none;
     -webkit-user-select: none; 
      -khtml-user-select: none; 
@@ -53,7 +73,16 @@ h1{
     padding-top: 15px;
 }
 
-#result-image{
-    text-align: center;
-    border-radius: 100%;
+img{
+    
+    /* border-radius: 50%;
+    border: 40px solid rgb(187, 130, 130); */
+    animation-name:            rotate; 
+    animation-duration:        10s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name:            warp; 
+    animation-duration:        20s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
