@@ -19,10 +19,50 @@ let results = {
     miria: `Your personality type is Miria the Fairy ...What the matter? My master is resting right now. That's a very rare item that you have there. It's called the Foxglove. It has the power to resurrect wandering souls. A messenger must have stolen it and fled, in hopes of returning ...Speaking of which, do you know how Messengers are born? They are originally fragments of human emotions... that acquire physical form and become sentient.`
 }
 
-let answers = ["Merchant", "Soldier", "Gravekeeper", "Priest", "Fairy", "I can't see a thing", "Sharp",
-    "I wear reading glasses", "Blessed", "Magically Enhanced", "Important Key", "Plate Armour", "Shovel",
-    "Gold Cross", "Magic Potion", "Spring", "Autumn", "Summer", "Winter", "I don't mind", "Very old",
-    "I don't know yet", "Normal", "Average", "Young"]
+let answers = [["Merchant", "Soldier", "Gravekeeper", "Priest", "Fairy"], ["I can't see a thing", "Sharp",
+    "I wear reading glasses", "Blessed", "Magically Enhanced"], ["Important Key", "Plate Armour", "Shovel",
+    "Gold Cross", "Magic Potion"], ["Spring", "Autumn", "Summer", "Winter", "I don't mind"], ["Very old",
+    "I don't know yet", "Normal", "Average", "Young"]]
+
+// let answers = [
+//     {
+//         roundOneWilfred: "Merchant",
+//         roundOneBasque: "Soldier",
+//         roundOneRanvalge: "Gravekeeper",
+//         roundOneJuedds: "Priest",
+//         roundOneMiria: "Fairy"
+//     },
+//     {
+//         roundTwoWilfred: "I can't see a thing",
+//         roundTwoBasque: "Sharp",
+//         roundTwoRanvalge: "I need my reading glasses",
+//         roundTwoJuedds: "Blessed",
+//         roundTwoMiria: "Magically Enhanced"
+//     },
+//     {
+//         roundThreeWilfred: "Important Key",
+//         roundThreeBasque: "Plate Armour",
+//         roundThreeRanvalge: "Shovel",
+//         roundThreeJuedds: "Gold Cross",
+//         roundThreeMiria: "Magic Potion"
+//     },
+//     {
+//         roundFourWilfred: "Spring",
+//         roundFourBasque: "Autumn",
+//         roundFourRanvalge: "Summer",
+//         roundFourJuedds: "Winter",
+//         roundFourMiria: "I don't mind"
+//     },
+//     {
+//         roundFiveWilfred: "Very old",
+//         roundFiveBasque: "I don't know yet",
+//         roundFiveRanvalge: "Normal",
+//         roundFiveJuedds: "Average",
+//         roundFiveMiria: "Young"
+//     },
+// ]
+
+
 
 let questions = ["Which job would you prefer?", "How is your eyesight?", "What's your favourite thing?", "Season?", "How old are you?"]
 
@@ -47,6 +87,7 @@ imgMiria.src = "images/miria.jpg";
 
 
 let answersArray = document.querySelectorAll(".answers-all");
+
 let answer1 = document.querySelector("#answ-1");
 let answer2 = document.querySelector("#answ-2");
 let answer3 = document.querySelector("#answ-3");
@@ -61,15 +102,11 @@ gameOver.addEventListener("click", reloadPage);
 function clickToStart() {
     beginQuiz.remove();
     title.innerHTML = questions[qNum];
-    answer1.innerHTML = answers[aNum];
-    aNum++
-    answer2.innerHTML = answers[aNum];
-    aNum++
-    answer3.innerHTML = answers[aNum];
-    aNum++
-    answer4.innerHTML = answers[aNum];
-    aNum++
-    answer5.innerHTML = answers[aNum];
+
+    for (let i = 0; i < 5; i++) {
+        answersArray[i].innerHTML = answers[aNum][i];
+
+    }
     aNum++
     qNum++;
     playAudio();
@@ -93,24 +130,12 @@ function nextQuestion(playerChoice) {
             scoreCounts.miria++;
             break;
     }
-
     if (qNum > 4) {
         gameEnd();
         playAudio2();
+        document.querySelector("body").style.background = "black";
     } else {
-        title.innerHTML = questions[qNum];
-        answer1.innerHTML = answers[aNum];
-        aNum++
-        answer2.innerHTML = answers[aNum];
-        aNum++
-        answer3.innerHTML = answers[aNum];
-        aNum++
-        answer4.innerHTML = answers[aNum];
-        aNum++
-        answer5.innerHTML = answers[aNum];
-        aNum++
-        qNum++;
-        playAudio();
+        clickToStart()
     }
 }
 
