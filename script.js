@@ -9,6 +9,8 @@ let scoreCounts = {
     miria: 0
 }
 
+// for tomorrow: try to store answerrs in object and make it so that the string itself is assosiated with who gets scored
+
 let results = {
     wilfred: `Your personality type is Wilfred Light, congratulations. You enjoy hiding treasure in graves and having your shop burgled. What's the purpose of your special key? It's a mystery`,
     basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and are well-known for your patient temperament. I hope your friends all return soon.`,
@@ -51,17 +53,8 @@ let answer3 = document.querySelector("#answ-3");
 let answer4 = document.querySelector("#answ-4");
 let answer5 = document.querySelector("#answ-5");
 
-
 let selectionSound = document.querySelector(".selection-sound");
 let endingSong = document.querySelector(".ending-song");
-
-// beginQuiz.addEventListener("click", clickToStart);
-
-// answer1.addEventListener("click", nextQuestion1);
-// answer2.addEventListener("click", nextQuestion2);
-// answer3.addEventListener("click", nextQuestion3);
-// answer4.addEventListener("click", nextQuestion4);
-// answer5.addEventListener("click", nextQuestion5);
 
 gameOver.addEventListener("click", reloadPage);
 
@@ -117,16 +110,16 @@ function nextQuestion(playerChoice) {
         answer5.innerHTML = answers[aNum];
         aNum++
         qNum++;
-        // playAudio();
+        playAudio();
     }
 }
 
 function wipeAnswers() {
+    answer1.remove();
     answer2.remove();
     answer3.remove();
     answer4.remove();
     answer5.remove();
-    answer1.remove();
     document.querySelector("#main-text").appendChild(gameOver).innerHTML = "Game over. Retry?";
     gameOver.classList.add("hover-text");
 }
@@ -170,7 +163,6 @@ function gameEnd() {
 function playAudio() {
     selectionSound.play();
 }
-
 
 function playAudio2() {
     endingSong.play();
