@@ -16,8 +16,6 @@ let answers = [["Merchant", "Soldier", "Gravekeeper", "Priest", "Fairy"], ["I ca
     "Gold Cross", "Magic Potion"], ["Spring", "Autumn", "Summer", "Winter", "I don't mind"], ["Very old",
     "I don't know yet", "Normal", "Young", "Average"]]
 
-
-
 let results = {
     wilfred: `Your personality type is Wilfred Light, congratulations. You enjoy hiding treasure in graves and having your shop burgled. What's the purpose of your special key? It's a mystery`,
     basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and are well-known for your patient temperament. I hope your friends all return soon.`,
