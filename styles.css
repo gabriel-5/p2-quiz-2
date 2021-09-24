@@ -30,11 +30,6 @@
 
 
 body{
-    /* background: url(images/background-lines.png) no-repeat center center fixed; */
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
     background-image: url(images/background-lines.png) ;
     -webkit-touch-callout: none;
     -webkit-user-select: none; 
@@ -46,8 +41,6 @@ body{
 
 .container{
     font-family: 'Gluten', cursive;
-    /* font-family: 'glider_girlsregular', serif; */
-
 }
 
 h1{
@@ -60,8 +53,6 @@ h1{
 .pink-text{
   
      color: rgb(187, 130, 130);
-     /* color: white; */
-   
 }
 
 .align-center {
@@ -70,10 +61,7 @@ h1{
 }
 
 .blue-background{
-    /* background-color: aqua; */
-    /* background-color: rgba(0, 255, 255, 0.322); */
     padding-top: 16px;
-    border-radius: 100%;
     margin: 4px;
 } 
 

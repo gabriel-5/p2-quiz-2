@@ -9,64 +9,22 @@ let scoreCounts = {
     miria: 0
 }
 
-// for tomorrow: try to store answerrs in object and make it so that the string itself is assosiated with who gets scored
+let questions = ["Which job would you prefer?", "How is your eyesight?", "What's your favourite thing?", "Least favourite season?", "How old are you?"]
+
+let answers = [["Merchant", "Soldier", "Gravekeeper", "Priest", "Fairy"], ["I can't see a thing", "Sharp",
+    "I wear reading glasses", "Blessed", "Magically Enhanced"], ["Important Key", "Plate Armour", "Shovel",
+    "Gold Cross", "Magic Potion"], ["Spring", "Autumn", "Summer", "Winter", "I don't mind"], ["Very old",
+    "I don't know yet", "Normal", "Young", "Average"]]
+
+let beginQuiz = document.querySelector("#begin-quiz");
 
 let results = {
     wilfred: `Your personality type is Wilfred Light, congratulations. You enjoy hiding treasure in graves and having your shop burgled. What's the purpose of your special key? It's a mystery`,
     basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and are well-known for your patient temperament. I hope your friends all return soon.`,
     ozzy: `Your personality type is Ozzy Ranvalgve, congratulations. You are easily the best fencer around, having spent years at the academy. Will you ever make amends with the sage?`,
-    juedds: `Your personality type is Juedds Kross, congratulations. You are deeply religious, and - before it was stolen - never would leave home without your massive gold cross. Who would steal something so cumbersome?`,
+    juedds: `Your personality type is Juedds Kross, congratulations. You are deeply religious, and never leave home without your massive gold cross. You don't have any friends right now.`,
     miria: `Your personality type is Miria the Fairy ...What the matter? My master is resting right now. That's a very rare item that you have there. It's called the Foxglove. It has the power to resurrect wandering souls. A messenger must have stolen it and fled, in hopes of returning ...Speaking of which, do you know how Messengers are born? They are originally fragments of human emotions... that acquire physical form and become sentient.`
 }
-
-let answers = [["Merchant", "Soldier", "Gravekeeper", "Priest", "Fairy"], ["I can't see a thing", "Sharp",
-    "I wear reading glasses", "Blessed", "Magically Enhanced"], ["Important Key", "Plate Armour", "Shovel",
-    "Gold Cross", "Magic Potion"], ["Spring", "Autumn", "Summer", "Winter", "I don't mind"], ["Very old",
-    "I don't know yet", "Normal", "Average", "Young"]]
-
-// let answers = [
-//     {
-//         roundOneWilfred: "Merchant",
-//         roundOneBasque: "Soldier",
-//         roundOneRanvalge: "Gravekeeper",
-//         roundOneJuedds: "Priest",
-//         roundOneMiria: "Fairy"
-//     },
-//     {
-//         roundTwoWilfred: "I can't see a thing",
-//         roundTwoBasque: "Sharp",
-//         roundTwoRanvalge: "I need my reading glasses",
-//         roundTwoJuedds: "Blessed",
-//         roundTwoMiria: "Magically Enhanced"
-//     },
-//     {
-//         roundThreeWilfred: "Important Key",
-//         roundThreeBasque: "Plate Armour",
-//         roundThreeRanvalge: "Shovel",
-//         roundThreeJuedds: "Gold Cross",
-//         roundThreeMiria: "Magic Potion"
-//     },
-//     {
-//         roundFourWilfred: "Spring",
-//         roundFourBasque: "Autumn",
-//         roundFourRanvalge: "Summer",
-//         roundFourJuedds: "Winter",
-//         roundFourMiria: "I don't mind"
-//     },
-//     {
-//         roundFiveWilfred: "Very old",
-//         roundFiveBasque: "I don't know yet",
-//         roundFiveRanvalge: "Normal",
-//         roundFiveJuedds: "Average",
-//         roundFiveMiria: "Young"
-//     },
-// ]
-
-
-
-let questions = ["Which job would you prefer?", "How is your eyesight?", "What's your favourite thing?", "Season?", "How old are you?"]
-
-let beginQuiz = document.querySelector("#begin-quiz");
 
 let title = document.querySelector("#main-text");
 
@@ -78,13 +36,11 @@ let imgOzzy = document.createElement("img");
 let imgJuedds = document.createElement("img");
 let imgMiria = document.createElement("img");
 
-
 imgWilfred.src = "images/wilfred.jpg";
 imgBasque.src = "images/basque.jpg";
 imgOzzy.src = "images/ozzy.jpg";
 imgJuedds.src = "images/juedds.jpg";
 imgMiria.src = "images/miria.jpg";
-
 
 let answersArray = document.querySelectorAll(".answers-all");
 
@@ -99,7 +55,7 @@ let endingSong = document.querySelector(".ending-song");
 
 gameOver.addEventListener("click", reloadPage);
 
-function clickToStart() {
+function playRound() {
     beginQuiz.remove();
     title.innerHTML = questions[qNum];
 
@@ -133,9 +89,9 @@ function nextQuestion(playerChoice) {
     if (qNum > 4) {
         gameEnd();
         playAudio2();
-        document.querySelector("body").style.background = "black";
+        document.querySelector("body").style.background = "url(images/background-image3.png)";
     } else {
-        clickToStart()
+        playRound()
     }
 }
 
