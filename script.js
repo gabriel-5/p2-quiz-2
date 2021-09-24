@@ -21,7 +21,7 @@ let results = {
     basque: `Your personality type is Basque Crize, congratulations. You are a great communicataor and are well-known for your patient temperament. I hope your friends all return soon.`,
     ozzy: `Your personality type is Ozzy Ranvalgve, congratulations. You are easily the best fencer around, having spent years at the academy. Will you ever make amends with the sage?`,
     juedds: `Your personality type is Juedds Kross, congratulations. You are deeply religious, and never leave home without your massive gold cross. You don't have any friends right now.`,
-    miria: `Your personality type is Miria the Fairy ...What the matter? My master is resting right now. That's a very rare item that you have there. It's called the Foxglove. It has the power to resurrect wandering souls. A messenger must have stolen it and fled, in hopes of returning ...Speaking of which, do you know how Messengers are born? They are originally fragments of human emotions... that acquire physical form and become sentient.`
+    miria: `Your personality type is Miria the Fairy ...What's the matter? My master is resting right now. That's a very rare item that you have there. It's called the Foxglove. It has the power to resurrect wandering souls. A messenger must have stolen it and fled, in hopes of returning ...Speaking of which, do you know how Messengers are born? They are originally fragments of human emotions... that acquire physical form and become sentient.`
 }
 
 let title = document.querySelector("#main-text");
